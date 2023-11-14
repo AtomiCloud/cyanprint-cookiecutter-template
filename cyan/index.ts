@@ -8,9 +8,10 @@ StartTemplateWithLambda(async (i, d) => {
   const url = await i.text("CookieCutter Git URL");
 
   const tmpPath = d.get("tmpPath", () => `/tmp/cookiecutter/${v4()}`);
-  if (!fs.existsSync(tmpPath)) fs.mkdirSync(tmpPath, { recursive: true });
-
-  await git.clone(url, tmpPath);
+  if (!fs.existsSync(tmpPath)) {
+    fs.mkdirSync(tmpPath, { recursive: true });
+    await git.clone(url, tmpPath);
+  }
 
   const cookieCutterJson = fs.readFileSync(
     `${tmpPath}/cookiecutter.json`,
