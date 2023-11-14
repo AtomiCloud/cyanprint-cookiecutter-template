@@ -1,0 +1,10 @@
+username: cyan
+name: cookiecutter
+description: CookieCutter-CyanPrint dynamic adapter
+project: https://github.com/AtomiCloud/cyanprint-cookiecutter-template
+source: https://github.com/AtomiCloud/cyanprint-cookiecutter-template
+email: ernest@atomi.cloud
+tags: ["cyanprint","default","cookiecutter"]
+readme: cyan/README.MD
+processors: ["cyan/cookiecutter"]
+plugins: []
