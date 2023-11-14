@@ -23,7 +23,14 @@ StartTemplateWithLambda(async (i, d) => {
   const results: Record<string, string> = {};
 
   for (const [key, value] of Object.entries(cookieCutter)) {
-    if (typeof value === "string") {
+    if (typeof value === "boolean") {
+      results[key] = (await i.confirm({
+        type: QuestionType.Confirm,
+        message: key,
+      }))
+        ? "true"
+        : "false";
+    } else if (typeof value === "string") {
       if (
         [
           "1",
