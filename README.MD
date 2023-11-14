@@ -1,17 +1,11 @@
-# CyanPrint Meta Template
+# CyanPrint CookieCutter Adapter
 
-Official CyanPrint template to create CyanPrint template, processor or plugins. 
-
-Supported language:
-- C#
-- JavaScript
-- TypeScript
-- Python
+Run CookieCutter templates with CyanPrint
 
 ## Getting Started
 
 1. Install [CyanPrint](https://cyanprint.dev) CLI
 2. Create template
     ```bash
-    cyanprint create cyan/new <folder>
+    cyanprint create cyan/cookiecutter <folder>
     ```
