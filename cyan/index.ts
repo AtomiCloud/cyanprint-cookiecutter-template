@@ -7,7 +7,7 @@ const git = simpleGit();
 StartTemplateWithLambda(async (i, d) => {
   const url = await i.text("CookieCutter Git URL");
 
-  const tmpPath = `/tmp/cookiecutter/${v4()}`;
+  const tmpPath = d.get("tmpPath", () => `/tmp/cookiecutter/${v4()}`);
   fs.mkdirSync(tmpPath, { recursive: true });
 
   await git.clone(url, tmpPath);
@@ -58,6 +58,7 @@ StartTemplateWithLambda(async (i, d) => {
       throw new Error(`Unknown type ${typeof value}`);
     }
   }
+  fs.rmSync(tmpPath, { recursive: true, force: true });
 
   return {
     processors: [
